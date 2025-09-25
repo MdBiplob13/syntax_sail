@@ -8,6 +8,20 @@
   --white: #fff;
   --offwhite: #F2F2F2;
   --red: #D90A2C;
+
+  @keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Sticky section styles for part 5 */
+.sticky {
+  position: sticky;
+}
 }
 
 @theme inline {
