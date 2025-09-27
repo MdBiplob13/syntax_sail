@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -6,22 +6,26 @@
   --foreground: #171717;
   --black: #111;
   --white: #fff;
-  --offwhite: #F2F2F2;
-  --red: #D90A2C;
+  --offwhite: #f2f2f2;
+  --red: #d90a2c;
 
   @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
 
-/* Sticky section styles for part 5 */
-.sticky {
-  position: sticky;
-}
+  /* Sticky section styles for part 5 */
+  .sticky {
+    position: sticky;
+  }
 }
 
 @theme inline {
@@ -29,7 +33,7 @@
   --color-foreground: var(--foreground);
   --font-sans: "Manrope", var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   /* Custom colors */
   --color-black: var(--black);
   --color-white: var(--white);
@@ -57,3 +61,5 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+
