@@ -1,16 +1,10 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ScrollEffectSections = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
   const sections = [
     {
       title: "We design websites that convert visitors into customers.",
@@ -35,22 +29,15 @@ const ScrollEffectSections = () => {
   ];
 
   return (
-    <section ref={containerRef} className="relative">
+    <section className="relative">
       {sections.map((section, index) => {
-        const isEven = index % 2 === 0;
-        const y = useTransform(scrollYProgress, [index / sections.length, (index + 1) / sections.length], [100, -100]);
-        const opacity = useTransform(scrollYProgress, [index / sections.length, (index + 1) / sections.length], [0, 1, 0]);
-        
         return (
           <div
             key={index}
             className="min-h-screen flex items-center justify-center sticky top-0 overflow-hidden"
           >
             {/* Background Image */}
-            <motion.div 
-              className="absolute inset-0 w-full h-full"
-              style={{ y }}
-            >
+            <div className="absolute inset-0 w-full h-full">
               <Image
                 src={section.image}
                 alt={`Office workspace ${index + 1}`}
@@ -60,18 +47,21 @@ const ScrollEffectSections = () => {
               />
               {/* Gradient Overlay */}
               <div className={`absolute inset-0 bg-gradient-to-br ${section.bgColor}`}></div>
-            </motion.div>
+            </div>
 
             {/* Content */}
             <motion.div 
               className="relative z-10 max-w-6xl mx-auto px-8 text-center"
-              style={{ opacity }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h2 
                 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
                 {section.title}
@@ -82,7 +72,7 @@ const ScrollEffectSections = () => {
                 className="w-24 h-1 bg-white mx-auto rounded-full"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true, margin: "-100px" }}
               ></motion.div>
             </motion.div>
