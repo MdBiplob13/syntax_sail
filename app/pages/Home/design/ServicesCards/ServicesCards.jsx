@@ -2,14 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiCode, FiSearch, FiTrendingUp, FiPalette } from "react-icons/fi";
+import { FiArrowRight, FiCode, FiSearch, FiTrendingUp, FiBrush } from "react-icons/fi";
 
 const ServicesCards = () => {
   const services = [
     {
       title: "UI/UX Design",
       desc: "Creating intuitive and engaging user experiences that convert visitors into customers",
-      icon: FiPalette,
+      icon: FiBrush,
       color: "from-purple-500 to-pink-500",
       bgColor: "from-purple-50 to-pink-50",
       darkBgColor: "from-purple-900/20 to-pink-900/20"
