@@ -29,6 +29,7 @@ export default function CursorFollower() {
       if (e.target.tagName === "H1" || e.target.tagName === "H2" || e.target.tagName === "H3" || 
           e.target.tagName === "P" || e.target.tagName === "SPAN" || e.target.closest("h1, h2, h3, p, span")) {
         setIsTextHovering(true);
+        e.target.classList.add("cursor-text-hover");
       }
     };
 
@@ -36,6 +37,7 @@ export default function CursorFollower() {
       if (e.target.tagName === "H1" || e.target.tagName === "H2" || e.target.tagName === "H3" || 
           e.target.tagName === "P" || e.target.tagName === "SPAN" || e.target.closest("h1, h2, h3, p, span")) {
         setIsTextHovering(false);
+        e.target.classList.remove("cursor-text-hover");
       }
     };
 
@@ -61,52 +63,52 @@ export default function CursorFollower() {
 
   return (
     <>
-      {/* Main cursor */}
+      {/* Main cursor - small dot */}
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 bg-white rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-50"
         animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
-          scale: isHovering ? 1.5 : 1,
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
         }}
         transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
+          type: "tween",
+          ease: "linear",
+          duration: 0,
         }}
       />
 
-      {/* Cursor trail */}
+      {/* Cursor trail - smooth following circle */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-2 border-white rounded-full pointer-events-none z-40 mix-blend-difference"
+        className="fixed top-0 left-0 w-8 h-8 border border-white/30 rounded-full pointer-events-none z-40"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
-          scale: isHovering ? 2 : 1,
+          scale: isHovering ? 1.5 : isTextHovering ? 1.2 : 1,
         }}
         transition={{
           type: "spring",
-          stiffness: 150,
-          damping: 15,
+          stiffness: 100,
+          damping: 20,
+          mass: 0.5,
         }}
       />
 
-      {/* Text hover effect */}
+      {/* Text hover effect - transparent circle that makes text red */}
       {isTextHovering && (
         <motion.div
-          className="fixed top-0 left-0 w-32 h-32 bg-red-500 rounded-full pointer-events-none z-30 mix-blend-difference"
+          className="fixed top-0 left-0 w-16 h-16 bg-transparent border border-red-500/20 rounded-full pointer-events-none z-30"
           initial={{ scale: 0, opacity: 0 }}
           animate={{
-            x: mousePosition.x - 64,
-            y: mousePosition.y - 64,
+            x: mousePosition.x - 32,
+            y: mousePosition.y - 32,
             scale: 1,
-            opacity: 0.3,
+            opacity: 1,
           }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{
             type: "spring",
-            stiffness: 300,
-            damping: 20,
+            stiffness: 200,
+            damping: 15,
           }}
         />
       )}
