@@ -277,7 +277,7 @@ const StatsSection = () => {
               Join our growing list of satisfied clients and let's create something amazing together.
             </p>
             <motion.button 
-              className="bg-white text-[#D90A2C] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+              className="bg-[#fff] text-[#D90A2C] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

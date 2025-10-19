@@ -1,0 +1,25 @@
+/* Remove red circle on hover */
+*:hover {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Specifically target common elements that might show red circles */
+p:hover, span:hover, div:hover {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Remove any pseudo-elements that might create red circles */
+*:hover::after, *:hover::before {
+    display: none !important;
+    background: none !important;
+    border: none !important;
+}
+
+/* Remove any box-shadow that might appear as red circle */
+*:hover {
+    box-shadow: none !important;
+}
