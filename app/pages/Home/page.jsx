@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import Banner from "./design/Banner/Banner";
 import InfiniteSlider from "./design/InfiniteSlider/InfiniteSlider";
 import StatsSection from "./design/StatsSection/StatsSection";
@@ -19,7 +22,14 @@ const HomePage = () => {
       <Banner />
 
       {/* Part 2: Infinite Slider */}
-      <InfiniteSlider />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <InfiniteSlider />
+      </motion.div>
 
       {/* Part 3: Stats Section */}
       <StatsSection />
@@ -31,22 +41,64 @@ const HomePage = () => {
       <ScrollEffectSections />
 
       {/* Part 6: Product Design Section */}
-      <ProductDesignSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <ProductDesignSection />
+      </motion.div>
 
       {/* Part 7: Why Choose Us */}
-      <WhyChooseUs />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <WhyChooseUs />
+      </motion.div>
 
       {/* Part 8: Process Steps */}
-      <ProcessSteps />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <ProcessSteps />
+      </motion.div>
 
       {/* Part 9: Reviews Slider */}
-      <ReviewsSlider />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <ReviewsSlider />
+      </motion.div>
 
       {/* Part 10: FAQ Section */}
-      <FaqSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <FaqSection />
+      </motion.div>
 
       {/* Part 11: Before Footer */}
-      <BeforeFooterSection />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <BeforeFooterSection />
+      </motion.div>
     </div>
   );
 };

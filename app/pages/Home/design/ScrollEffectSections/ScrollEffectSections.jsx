@@ -44,7 +44,7 @@ const ScrollEffectSections = () => {
         return (
           <div
             key={index}
-            className="min-h-screen flex items-center justify-center sticky top-0 relative overflow-hidden"
+            className="min-h-screen flex items-center justify-center sticky top-0 overflow-hidden"
           >
             {/* Background Image */}
             <motion.div 
