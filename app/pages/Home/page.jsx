@@ -17,7 +17,7 @@ import BeforeFooterSection from "./design/BeforeFooterSection/BeforeFooterSectio
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0b0e]">
       {/* Part 1: Banner */}
       <Banner />
 

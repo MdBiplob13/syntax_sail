@@ -184,7 +184,7 @@ const StatsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden"
+      className="py-20 bg-[#0b0b08] relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">

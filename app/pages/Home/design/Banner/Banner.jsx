@@ -8,8 +8,7 @@ import Link from "next/link";
 export default function Banner() {
   return (
     <section className="w-full bg-black text-white pt-32 pb-20 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+      
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"></div>
