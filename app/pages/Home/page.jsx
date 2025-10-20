@@ -40,7 +40,7 @@ const HomePage = () => {
       {/* Part 5: Scroll Effect Sections */}
       <ScrollEffectSections />
 
-      {/* Part 6: Product Design Section */}
+      {/* Part 6: Product Design Section
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ const HomePage = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         <ProductDesignSection />
-      </motion.div>
+      </motion.div> */}
 
       {/* Part 7: Why Choose Us */}
       <motion.div
